@@ -1,0 +1,11 @@
+#!/bin/bash
+
+q=100 # quality
+
+mkdir PHOTO_jpeg;
+for i in *.tiff ;
+do
+convert -quality ${q} "$i" "PHOTO_jpeg/${i%}.JPG" ;
+done
+echo "... Done!"
+exit 0 
