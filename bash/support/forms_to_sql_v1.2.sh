@@ -7,24 +7,24 @@ year=`date +"%Y"`
 month=`date +"%m"`
 day=`date +"%d"`
 ## Директории
-main_dir="/home/data/reg_forms"
-ftp_dir="/home/data/reg_forms/POS/ftp"
-db_dir="/home/data/reg_forms/POS/db"
-diff_dir="/home/data/reg_forms/POS/diff"
-backup_dir="/home/data/reg_forms/POS/backup"
+main_dir="/home/data/forms"
+ftp_dir="/home/data/forms/P/ftp"
+db_dir="/home/data/forms/P/db"
+diff_dir="/home/data/forms/P/diff"
+backup_dir="/home/data/forms/P/backup"
 keep=4              # Количество сохранеемых backup`ов БД
 ## FTP
-HOST="10.170.224.248"
+HOST="10.10.10.10"
 PORT="8200"
 USER="R2"
 PASS="secret"
-LCD_POS="${main_dir}/POS/current"
-RCD_POS="9040/FORMS/POS"
+LCD_POS="${main_dir}/P/current"
+RCD_POS="9040/FORMS/P"
 ## MySQL
 dbh='localhost'     # Mysql host
 dbu='root'          # Пользователь mysql
 dbp='secret'        # Пароль
-dbb='regforms'      # База данных
+dbb='forms'         # База данных
 dbt='pos'           # Таблица
 #############################################################
 ## Переходим в рабочую директорию
@@ -51,7 +51,7 @@ done
 chmod 0777 -R ${diff_dir}
 sleep 2
 ## Создаем backup БД
-mysqldump -u ${dbu} -p${dbp} -f ${dbb} --lock-tables | gzip > ${backup_dir}/regforms_${current_d}.gz
+mysqldump -u ${dbu} -p${dbp} -f ${dbb} --lock-tables | gzip > ${backup_dir}/forms_${current_d}.gz
 sleep 3
 ## Заносим новые файлы в БД
 for i in `ls ${diff_dir}`; do

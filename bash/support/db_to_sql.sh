@@ -2,12 +2,12 @@
 
 #################### Config #########################
 ## Директории
-db_dir='/home/data/reg_forms/POS/db'
+db_dir='/home/data/db'
 ## MySQL
 dbh='localhost'
 dbu='root'
 dbp='secret'
-dbb='regforms'
+dbb='forms'
 dbt='pos'
 #####################################################
 # Получаем содержимое директории и заносим всё в БД
