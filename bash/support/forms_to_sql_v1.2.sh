@@ -19,7 +19,7 @@ PORT="8200"
 USER="R2"
 PASS="secret"
 LCD_POS="${main_dir}/P/current"
-RCD_POS="9040/FORMS/P"
+RCD_POS="2000/FORMS/P"
 ## MySQL
 dbh='localhost'     # Mysql host
 dbu='root'          # Пользователь mysql
